@@ -11,7 +11,7 @@ const vehicles = [
   { name: "Toyota Innova",    type: "SUV",            seats: 7, bags: 3, img: "images/vehicles/innova.png" },
   { name: "Innova Crysta",    type: "Premium SUV",    seats: 7, bags: 4, img: "images/vehicles/innova_crysta.png" },
   { name: "Tempo Traveller",  type: "Group Van",      seats: 12, bags: 8, img: "images/vehicles/tempo_traveller.png" },
-  { name: "Tourist Bus",      type: "Group Bus",      seats: 52, bags: null, img: "images/vehicles/tourist_bus.png" }
+  
 ];
 
 // --- Reviews ---
