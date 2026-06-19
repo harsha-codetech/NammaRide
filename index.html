@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NammaRide | Premium Travel Services in Bengaluru</title>
+  <meta name="description" content="NammaRide offers reliable airport transfers, intercity travel and local packages across Bengaluru and nearby cities. Call now to book your ride." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Loading screen -->
+  <div class="loader" id="loader">
+    <div class="loader__logo">Namma<span>Ride</span></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#" class="logo">Namma<span>Ride</span></a>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header__cta">
+        <a href="#" class="btn btn-primary" data-call>
+          <span class="material-symbols-outlined">call</span> Call Now
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="navClose" aria-label="Close menu">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <a href="#services">Services</a>
+    <a href="#fleet">Fleet</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="#" data-call class="btn btn-primary" style="font-family:'Manrope',sans-serif;font-size:15px;">
+      <span class="material-symbols-outlined">call</span> Call Now
+    </a>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__photo" id="heroPhoto"></div>
+      <div class="hero__veil"></div>
+      <div class="hero__inner">
+        <div class="hero__content reveal">
+          <h1>Namma<span>Ride</span></h1>
+          <p class="hero__sub">Airport Transfers • Intercity Travel • Local Packages</p>
+          <p class="hero__desc">Reliable travel services across Bengaluru and nearby cities — with clean, well-maintained vehicles and courteous drivers.</p>
+          <div class="hero__actions">
+            <a href="#" class="btn btn-primary" data-call>
+              <span class="material-symbols-outlined">call</span> Call Now
+            </a>
+            <a href="#fleet" class="btn btn-ghost">Explore Fleet</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our Services</span>
+          <h2>Travel, Made Effortless</h2>
+          <p>From early-morning airport runs to weekend getaways, we cover every journey across Bengaluru and beyond.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <span class="material-symbols-outlined service-card__icon">local_airport</span>
+            <h3>Airport Transfers</h3>
+            <p>Pickup and drop services to and from Kempegowda International Airport, Bengaluru.</p>
+            <ul class="service-list">
+              <li><span class="material-symbols-outlined">check_circle</span> Terminal 1 (T1)</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Terminal 2 (T2)</li>
+              <li><span class="material-symbols-outlined">check_circle</span> On-time, 24/7 service</li>
+            </ul>
+          </div>
+
+          <div class="service-card reveal">
+            <span class="material-symbols-outlined service-card__icon">map</span>
+            <h3>Intercity Travel</h3>
+            <p>Comfortable long-distance travel to popular destinations across South India.</p>
+            <div class="dest-grid">
+              <span>• Mysuru</span>
+              <span>• Coorg</span>
+              <span>• Ooty</span>
+              <span>• Tirupati</span>
+              <span>• Chennai</span>
+              <span>• Hyderabad</span>
+              <span>• Vellore</span>
+              <span>• Mangaluru</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal">
+            <span class="material-symbols-outlined service-card__icon">schedule</span>
+            <h3>Local Packages</h3>
+            <p>Flexible hourly packages for city travel, meetings and sightseeing.</p>
+            <ul class="package-list">
+              <li><span>4 Hour / 40 km</span><span class="tag">Essential</span></li>
+              <li><span>8 Hour / 80 km</span><span class="tag">Classic</span></li>
+              <li><span>12 Hour / 120 km</span><span class="tag">Full Day</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet -->
+    <section class="section fleet" id="fleet">
+      <div class="container">
+        <div class="fleet__head reveal">
+          <div>
+            <span class="eyebrow">Our Fleet</span>
+            <h2>The Right Vehicle for Every Trip</h2>
+            <p>Well-maintained sedans, SUVs and vans for solo travellers, families and groups.</p>
+          </div>
+          <div class="fleet__nav">
+            <button id="fleetPrev" aria-label="Previous"><span class="material-symbols-outlined">arrow_back</span></button>
+            <button id="fleetNext" aria-label="Next"><span class="material-symbols-outlined">arrow_forward</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper fleet-swiper" style="padding: 0 var(--margin);">
+        <div class="swiper-wrapper" id="fleetWrapper"></div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Customer Reviews</span>
+          <h2>Trusted by Travellers</h2>
+          <p>A few words from the people who ride with us every day.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="swiper reviews-swiper">
+          <div class="swiper-wrapper" id="reviewsWrapper"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <div class="footer__about">
+        <a href="#" class="logo">Namma<span>Ride</span></a>
+        <p>Reliable travel services based in Bengaluru — airport transfers, intercity trips and local packages, available around the clock.</p>
+        <a href="#" class="footer__phone" data-call>
+          <span class="material-symbols-outlined">call</span> <span data-phone-display>+91 XXXXX XXXXX</span>
+        </a>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Airport Transfers</a></li>
+          <li><a href="#services">Intercity Travel</a></li>
+          <li><a href="#services">Local Packages</a></li>
+          <li><a href="#fleet">Our Fleet</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#" data-call>Call to Book</a></li>
+          <li><a href="#reviews">Customer Reviews</a></li>
+          <li>SPT-NammaRide, Bengaluru, Karnataka</li>
+          <li>Available 24 / 7</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      © <span id="year"></span> NammaRide. All rights reserved.
+  </footer>
+
+  <!-- Floating call button -->
+  <a href="#" class="float-call" data-call aria-label="Call NammaRide">
+    <span class="material-symbols-outlined">call</span>
+    <span>Call Now</span>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
