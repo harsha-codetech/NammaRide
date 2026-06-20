@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NammaRide | Premium Travel Services in Bengaluru</title>
-  <meta name="description" content="NammaRide offers reliable airport transfers, intercity travel and local packages across Bengaluru and nearby cities. Call now to book your ride." />
+  <title>Shivapoorni Travels | Premium Travel Services in Bengaluru</title>
+  <meta name="description" content="Shivapoorni Travels offers reliable airport transfers, intercity travel and local packages across Bengaluru and nearby cities. Call now to book your ride." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,13 +18,13 @@
 
   <!-- Loading screen -->
   <div class="loader" id="loader">
-    <div class="loader__logo">Namma<span>Ride</span></div>
+    <div class="loader__logo">Shivapoorni<span> Travels</span></div>
   </div>
 
   <!-- Header -->
   <header class="header" id="header">
     <div class="header__inner">
-      <a href="#" class="logo">Namma<span>Ride</span></a>
+      <a href="#" class="logo">Shivapoorni<span> Travels</span></a>
       <nav class="nav">
         <a href="#services">Services</a>
         <a href="#fleet">Fleet</a>
@@ -32,9 +32,7 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="header__cta">
-        <a href="#" class="btn btn-primary" data-call>
-          <span class="material-symbols-outlined">call</span> Call Now
-        </a>
+        
         <button class="nav-toggle" id="navToggle" aria-label="Open menu">
           <span class="material-symbols-outlined">menu</span>
         </button>
@@ -59,12 +57,10 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <div class="hero__bg"></div>
-      <div class="hero__photo" id="heroPhoto"></div>
-      <div class="hero__veil"></div>
+      <div class="hero__image" role="img" aria-label="White Toyota Innova at Bengaluru airport terminal"></div>
       <div class="hero__inner">
         <div class="hero__content reveal">
-          <h1>Namma<span>Ride</span></h1>
+          <h1>Shivapoorni<span> Travels</span></h1>
           <p class="hero__sub">Airport Transfers • Intercity Travel • Local Packages</p>
           <p class="hero__desc">Reliable travel services across Bengaluru and nearby cities — with clean, well-maintained vehicles and courteous drivers.</p>
           <div class="hero__actions">
@@ -73,6 +69,11 @@
             </a>
             <a href="#fleet" class="btn btn-ghost">Explore Fleet</a>
           </div>
+          <ul class="hero__trust">
+            <li><span class="material-symbols-outlined">verified_user</span> Safe &amp; Reliable</li>
+            <li><span class="material-symbols-outlined">schedule</span> On-Time Service</li>
+            <li><span class="material-symbols-outlined">payments</span> Transparent Pricing</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -98,6 +99,51 @@
             </ul>
           </div>
 
+          <div class="service-card booking-card reveal">
+            <span class="material-symbols-outlined service-card__icon">event_available</span>
+            <h3>Quick Booking</h3>
+            <p>Tell us your trip details.</p>
+            <form class="booking-form" id="bookingForm" novalidate>
+              <div class="field">
+                <span class="material-symbols-outlined">my_location</span>
+                <span class="field__control">
+                  <input type="text" id="bkFrom" name="from" placeholder=" " required />
+                  <label for="bkFrom" class="field__label">From Location</label>
+                </span>
+              </div>
+              <div class="field">
+                <span class="material-symbols-outlined">place</span>
+                <span class="field__control">
+                  <input type="text" id="bkTo" name="to" placeholder=" " required />
+                  <label for="bkTo" class="field__label">To Location</label>
+                </span>
+              </div>
+              <div class="field">
+                <span class="material-symbols-outlined">call</span>
+                <span class="field__control">
+                  <input type="tel" id="bkPhone" name="phone" placeholder=" " required />
+                  <label for="bkPhone" class="field__label">Contact Number</label>
+                </span>
+              </div>
+              <div class="field">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="field__control">
+                  <input type="date" id="bkFromDate" name="fromDate" placeholder=" " required />
+                  <label for="bkFromDate" class="field__label">From Date</label>
+                </span>
+              </div>
+              <div class="field">
+                <span class="material-symbols-outlined">event</span>
+                <span class="field__control">
+                  <input type="date" id="bkToDate" name="toDate" placeholder=" " required />
+                  <label for="bkToDate" class="field__label">To Date</label>
+                </span>
+              </div>
+              <button type="submit" class="btn btn-primary booking-submit">Request Booking</button>
+              <p class="booking-note"><span class="material-symbols-outlined">check_circle</span> We typically respond within 5 minutes</p>
+            </form>
+          </div>
+
           <div class="service-card reveal">
             <span class="material-symbols-outlined service-card__icon">map</span>
             <h3>Intercity Travel</h3>
@@ -113,20 +159,23 @@
               <span>• Mangaluru</span>
             </div>
           </div>
-
-          <div class="service-card reveal">
-            <span class="material-symbols-outlined service-card__icon">schedule</span>
-            <h3>Local Packages</h3>
-            <p>Flexible hourly packages for city travel, meetings and sightseeing.</p>
-            <ul class="package-list">
-              <li><span>4 Hour / 40 km</span><span class="tag">Essential</span></li>
-              <li><span>8 Hour / 80 km</span><span class="tag">Classic</span></li>
-              <li><span>12 Hour / 120 km</span><span class="tag">Full Day</span></li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
+
+    <!-- Rental information card -->
+    <div class="rental-banner reveal">
+      <div class="rental-banner__card">
+        <span class="material-symbols-outlined rental-banner__icon">directions_car</span>
+        <h3>Rental Information</h3>
+        <p class="rental-banner__lead">300 km included per day</p>
+        <ul class="rental-banner__points">
+          <li><span class="material-symbols-outlined">check</span> Additional kilometres charged separately</li>
+          <li><span class="material-symbols-outlined">check</span> Multi-day rentals available</li>
+          <li><span class="material-symbols-outlined">check</span> Contact us for custom pricing</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Fleet -->
     <section class="section fleet" id="fleet">
@@ -171,7 +220,7 @@
   <footer class="footer" id="contact">
     <div class="footer__inner">
       <div class="footer__about">
-        <a href="#" class="logo">Namma<span>Ride</span></a>
+        <a href="#" class="logo">Shivapoorni<span> Travels</span></a>
         <p>Reliable travel services based in Bengaluru — airport transfers, intercity trips and local packages, available around the clock.</p>
         <a href="#" class="footer__phone" data-call>
           <span class="material-symbols-outlined">call</span> <span data-phone-display>+91 XXXXX XXXXX</span>
@@ -191,17 +240,17 @@
         <ul>
           <li><a href="#" data-call>Call to Book</a></li>
           <li><a href="#reviews">Customer Reviews</a></li>
-          <li>NammaRide, Bengaluru, Karnataka</li>
+          <li>Shivapoorni Travels, Bengaluru, Karnataka</li>
           <li>Available 24 / 7</li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      © <span id="year"></span> NammaRide. All rights reserved.
+      © <span id="year"></span> Shivapoorni Travels. All rights reserved.
   </footer>
 
   <!-- Floating call button -->
-  <a href="#" class="float-call" data-call aria-label="Call NammaRide">
+  <a href="#" class="float-call" data-call aria-label="Call Shivapoorni Travels">
     <span class="material-symbols-outlined">call</span>
     <span>Call Now</span>
   </a>

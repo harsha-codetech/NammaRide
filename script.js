@@ -1,4 +1,4 @@
-// NammaRide — site behaviour
+// Shivapoorni Travels — site behaviour
 
 // Replace this with the real number. Used by every "Call Now" link.
 const PHONE_NUMBER = "+91XXXXXXXXXX";
@@ -22,14 +22,14 @@ const reviews = [
   { name: "Sneha Reddy", route: "Bengaluru → Tirupati", text: "Did the Tirupati trip with family. Punctual, polite driver and a very neat vehicle. Will book again." },
   { name: "Karthik Iyer", route: "Local Package • 8hr", text: "Used the 8 hour package for client meetings across the city. On time at every stop, very professional." },
   { name: "Megha Joshi", route: "Bengaluru → Mysuru", text: "Quick and comfortable ride to Mysuru. Transparent pricing with no last-minute surprises." },
-  { name: "Arjun Menon", route: "Airport Transfer • T2", text: "Have used NammaRide three times now for airport drops. Consistent, reliable and always clean cabs." },
+  { name: "Arjun Menon", route: "Airport Transfer • T2", text: "Have used Shivapoorni Travels three times now for airport drops. Consistent, reliable and always clean cabs." },
   { name: "Divya Rao", route: "Bengaluru → Ooty", text: "The Ertiga was perfect for our group trip to Ooty. Driver was patient on the ghat roads. Highly recommend." },
   { name: "Vikram Singh", route: "Local Package • 12hr", text: "Full day package for a family function. Smooth experience from the first call to drop-off." },
   { name: "Anjali Kulkarni", route: "Airport Transfer • T1", text: "Easy booking over a phone call and the driver tracked my flight. Stress-free start to my trip." },
   { name: "Suresh Kumar", route: "Bengaluru → Chennai", text: "Long drive to Chennai was very comfortable. Well-maintained car and a safe, steady driver." },
   { name: "Lakshmi Pillai", route: "Bengaluru → Chikkamagaluru", text: "Lovely trip to the coffee estates. Courteous driver and a spotless vehicle throughout." },
   { name: "Naveen Gowda", route: "Airport Transfer • T2", text: "Quick response when I called, and the cab arrived in 15 minutes. Great local service." },
-  { name: "Pooja Hegde", route: "Bengaluru → Mangaluru", text: "Overnight trip to Mangaluru went perfectly. Felt safe the entire way. Thank you NammaRide." },
+  { name: "Pooja Hegde", route: "Bengaluru → Mangaluru", text: "Overnight trip to Mangaluru went perfectly. Felt safe the entire way. Thank you Shivapoorni Travels." },
   { name: "Rohan Desai", route: "Local Package • 4hr", text: "Needed a cab for a few hours of city errands. Simple, affordable and on time." },
   { name: "Shruti Agarwal", route: "Airport Transfer • T1", text: "Driver helped with luggage and got me to the terminal with time to spare. Very courteous." },
   { name: "Manoj Pillai", route: "Bengaluru → Hyderabad", text: "Comfortable intercity ride to Hyderabad. Clean Innova and a calm, experienced driver." },
@@ -132,11 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Hero photo (only shows if images/hero.jpg exists)
-  const heroImg = new Image();
-  heroImg.onload = () => document.getElementById("heroPhoto").classList.add("loaded");
-  heroImg.src = "images/hero.jpg";
-
   // Scroll reveal with staggered delays for a more professional feel
   const reveals = Array.from(document.querySelectorAll(".reveal"));
   reveals.forEach((el, i) => el.style.setProperty('--reveal-delay', `${i * 120}ms`));
@@ -171,7 +166,68 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("navToggle").addEventListener("click", () => mobileNav.classList.add("open"));
   document.getElementById("navClose").addEventListener("click", () => mobileNav.classList.remove("open"));
   mobileNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => mobileNav.classList.remove("open")));
+
+  // Booking enquiry form
+  setupEnquiryForm(document.getElementById("bookingForm"));
 });
+
+function setupEnquiryForm(form) {
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Native checks first (required fields, dates, dropdown)
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // Phone must be 10–12 digits
+    const phoneField = form.phone;
+    const digits = phoneField.value.replace(/\D/g, "");
+    if (digits.length < 10 || digits.length > 12) {
+      phoneField.closest(".field").classList.add("invalid");
+      phoneField.focus();
+      showToast("Please enter a valid contact number.", "error");
+      return;
+    }
+    phoneField.closest(".field").classList.remove("invalid");
+
+    // To Date cannot be before From Date
+    const dateInputs = form.querySelectorAll('input[type="date"]');
+    if (dateInputs.length === 2 && dateInputs[1].value < dateInputs[0].value) {
+      dateInputs[1].closest(".field").classList.add("invalid");
+      dateInputs[1].focus();
+      showToast("To Date cannot be before From Date.", "error");
+      return;
+    }
+
+    showToast("Thank you! We will contact you shortly.");
+    form.reset();
+  });
+
+  // Clear invalid highlight as the user edits a flagged field
+  form.querySelectorAll("input, select").forEach((el) =>
+    el.addEventListener("input", () => el.closest(".field").classList.remove("invalid"))
+  );
+}
+
+// Lightweight toast notification
+let toastTimer;
+function showToast(message, type) {
+  let toast = document.querySelector(".toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "toast";
+    document.body.appendChild(toast);
+  }
+  const icon = type === "error" ? "error" : "check_circle";
+  toast.innerHTML = `<span class="material-symbols-outlined">${icon}</span>${message}`;
+  requestAnimationFrame(() => toast.classList.add("show"));
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 3500);
+}
 
 // --- Loader fade out ---
 window.addEventListener("load", () => {
