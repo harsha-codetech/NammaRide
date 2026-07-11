@@ -167,67 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("navClose").addEventListener("click", () => mobileNav.classList.remove("open"));
   mobileNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => mobileNav.classList.remove("open")));
 
-  // Booking enquiry form
-  setupEnquiryForm(document.getElementById("bookingForm"));
 });
 
-function setupEnquiryForm(form) {
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Native checks first (required fields, dates, dropdown)
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    // Phone must be 10–12 digits
-    const phoneField = form.phone;
-    const digits = phoneField.value.replace(/\D/g, "");
-    if (digits.length < 10 || digits.length > 12) {
-      phoneField.closest(".field").classList.add("invalid");
-      phoneField.focus();
-      showToast("Please enter a valid contact number.", "error");
-      return;
-    }
-    phoneField.closest(".field").classList.remove("invalid");
-
-    // To Date cannot be before From Date
-    const dateInputs = form.querySelectorAll('input[type="date"]');
-    if (dateInputs.length === 2 && dateInputs[1].value < dateInputs[0].value) {
-      dateInputs[1].closest(".field").classList.add("invalid");
-      dateInputs[1].focus();
-      showToast("To Date cannot be before From Date.", "error");
-      return;
-    }
-
-    showToast("Thank you! We will contact you shortly.");
-    form.reset();
-  });
-
-  // Clear invalid highlight as the user edits a flagged field
-  form.querySelectorAll("input, select").forEach((el) =>
-    el.addEventListener("input", () => el.closest(".field").classList.remove("invalid"))
-  );
-}
-
-// Lightweight toast notification
-let toastTimer;
-function showToast(message, type) {
-  let toast = document.querySelector(".toast");
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.className = "toast";
-    document.body.appendChild(toast);
-  }
-  const icon = type === "error" ? "error" : "check_circle";
-  toast.innerHTML = `<span class="material-symbols-outlined">${icon}</span>${message}`;
-  requestAnimationFrame(() => toast.classList.add("show"));
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove("show"), 3500);
-}
 
 // --- Loader fade out ---
 window.addEventListener("load", () => {
