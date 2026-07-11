@@ -99,20 +99,15 @@
             </ul>
           </div>
 
-          <div class="service-card reveal" style="display: flex; flex-direction: column;">
-            <span class="material-symbols-outlined service-card__icon">verified</span>
-            <h3>Why Choose Shivapoorni Travels</h3>
-            <ul class="service-list" style="flex: 1; margin-bottom: 24px; margin-top: 12px;">
-              <li><span class="material-symbols-outlined">work</span> Professional & Experienced Drivers</li>
-              <li><span class="material-symbols-outlined">cleaning_services</span> Clean & Well-Maintained Vehicles</li>
-              <li><span class="material-symbols-outlined">schedule</span> On-Time Pickup & Drop</li>
-              <li><span class="material-symbols-outlined">support_agent</span> 24×7 Customer Support</li>
-              <li><span class="material-symbols-outlined">health_and_safety</span> Comfortable & Safe Journey</li>
-              <li><span class="material-symbols-outlined">payments</span> Transparent Pricing</li>
+          <div class="rental-banner__card reveal" style="height: 100%; box-sizing: border-box; width: 100%; margin: 0; padding: 28px;">
+            <span class="material-symbols-outlined rental-banner__icon">directions_car</span>
+            <h3>Rental Information</h3>
+            <p class="rental-banner__lead">300 km included per day</p>
+            <ul class="rental-banner__points">
+              <li><span class="material-symbols-outlined">check</span> Additional kilometres charged separately</li>
+              <li><span class="material-symbols-outlined">check</span> Multi-day rentals available</li>
+              <li><span class="material-symbols-outlined">check</span> Contact us for custom pricing</li>
             </ul>
-            <a href="tel:+91XXXXXXXXXX" data-call class="btn btn-primary" style="width: 100%; justify-content: center;">
-              <span class="material-symbols-outlined">call</span> Call Now
-            </a>
           </div>
 
           <div class="service-card reveal">
@@ -134,48 +129,53 @@
       </div>
     </section>
 
-    <!-- Why Customers Choose Us -->
-    <section class="section features" id="features" style="background: var(--surface-low);">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Why Customers Choose Us</span>
-          <h2>Experience the Difference</h2>
-          <p>We take pride in offering premium, reliable, and comfortable travel experiences.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card reveal">
-            <span class="material-symbols-outlined feature-card__icon">badge</span>
-            <h4>Professional Drivers</h4>
-            <p>Experienced and courteous drivers for every journey.</p>
+    <!-- Quick Booking -->
+    <div class="rental-banner reveal">
+      <div class="service-card booking-card" style="max-width: 900px; margin: 0 auto;">
+        <span class="material-symbols-outlined service-card__icon">event_available</span>
+        <h3>Quick Booking</h3>
+        <p>Tell us your trip details.</p>
+        <form class="booking-form" id="bookingForm" novalidate>
+          <div class="field">
+            <span class="material-symbols-outlined">my_location</span>
+            <span class="field__control">
+              <input type="text" id="bkFrom" name="from" placeholder=" " required />
+              <label for="bkFrom" class="field__label">From Location</label>
+            </span>
           </div>
-          <div class="feature-card reveal">
-            <span class="material-symbols-outlined feature-card__icon">local_car_wash</span>
-            <h4>Clean Vehicles</h4>
-            <p>Vehicles are cleaned and maintained regularly.</p>
+          <div class="field">
+            <span class="material-symbols-outlined">place</span>
+            <span class="field__control">
+              <input type="text" id="bkTo" name="to" placeholder=" " required />
+              <label for="bkTo" class="field__label">To Location</label>
+            </span>
           </div>
-          <div class="feature-card reveal">
-            <span class="material-symbols-outlined feature-card__icon">schedule</span>
-            <h4>24×7 Service</h4>
-            <p>Airport transfers and travel assistance available anytime.</p>
+          <div class="field">
+            <span class="material-symbols-outlined">call</span>
+            <span class="field__control">
+              <input type="tel" id="bkPhone" name="phone" placeholder=" " required />
+              <label for="bkPhone" class="field__label">Contact Number</label>
+            </span>
           </div>
-          <div class="feature-card reveal">
-            <span class="material-symbols-outlined feature-card__icon">price_check</span>
-            <h4>Transparent Pricing</h4>
-            <p>Clear pricing with no hidden charges.</p>
+          <div class="field">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span class="field__control">
+              <input type="date" id="bkFromDate" name="fromDate" placeholder=" " required />
+              <label for="bkFromDate" class="field__label">From Date</label>
+            </span>
           </div>
-          <div class="feature-card reveal">
-            <span class="material-symbols-outlined feature-card__icon">airline_seat_recline_extra</span>
-            <h4>Comfortable Travel</h4>
-            <p>Spacious seating with well-maintained vehicles.</p>
+          <div class="field">
+            <span class="material-symbols-outlined">event</span>
+            <span class="field__control">
+              <input type="date" id="bkToDate" name="toDate" placeholder=" " required />
+              <label for="bkToDate" class="field__label">To Date</label>
+            </span>
           </div>
-          <div class="feature-card reveal">
-            <span class="material-symbols-outlined feature-card__icon">support_agent</span>
-            <h4>Reliable Support</h4>
-            <p>Quick assistance before and during your journey.</p>
-          </div>
-        </div>
+          <button type="submit" class="btn btn-primary booking-submit">Request Booking</button>
+          <p class="booking-note"><span class="material-symbols-outlined">check_circle</span> We typically respond within 5 minutes</p>
+        </form>
       </div>
-    </section>
+    </div>
 
     <!-- Fleet -->
     <section class="section fleet" id="fleet">
