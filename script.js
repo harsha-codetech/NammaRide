@@ -1,8 +1,8 @@
 // Shivapoorni Travels — site behaviour
 
 // Replace this with the real number. Used by every "Call Now" link.
-const PHONE_NUMBER = "+91XXXXXXXXXX";
-const PHONE_DISPLAY = "+91 XXXXX XXXXX";
+const PHONE_NUMBER = "+918762629344";
+const PHONE_DISPLAY = "+91 87626 29344";
 
 // --- Vehicle data ---
 const vehicles = [
